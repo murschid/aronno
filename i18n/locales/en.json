@@ -1,0 +1,63 @@
+{
+  "brand": {
+    "name": "Aronno",
+    "keyboard": "Keyboard"
+  },
+  "nav": {
+    "features": "Features",
+    "showcase": "Showcase",
+    "download": "Download",
+    "cta": "Download App"
+  },
+  "hero": {
+    "badge": "v5.0 Now Available",
+    "title": "Aronno Keyboard",
+    "subtitle": "The Future of Bengali Typing",
+    "cta": "Download Now",
+    "github": "GitHub",
+    "alt_mockup": "Aronno Keyboard Mockup"
+  },
+  "features": {
+    "title": "Features that Empower",
+    "subtitle": "Everything you need for seamless Bengali typing.",
+    "items": {
+      "privacy": {
+        "title": "Total Privacy",
+        "description": "Offline processing. No data collection."
+      },
+      "typing": {
+        "title": "Smart Typing",
+        "description": "AI-powered prediction."
+      },
+      "themes": {
+        "title": "Beautiful Themes",
+        "description": "Customizable looks."
+      },
+      "voice": {
+        "title": "Voice Typing",
+        "description": "Accurate Bengali voice input."
+      }
+    }
+  },
+  "showcase": {
+    "title_prefix": "Designed for",
+    "title_speed": "Speed",
+    "title_and": "and",
+    "title_precision": "Precision",
+    "description": "Experience the most fluid typing interface ever created for Bengali. Every key, every animation, and every prediction is crafted to save you time.",
+    "list": {
+      "adaptive": "Adaptive Layouts",
+      "clipboard": "Smart Clipboard",
+      "voice": "Offline Voice Typing"
+    },
+    "cta": "Explore All Features",
+    "stats": {
+      "speed": "Speed",
+      "wpm": "120 WPM"
+    },
+    "alt_interface": "Keyboard Interface"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
