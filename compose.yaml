@@ -5,8 +5,26 @@ services:
       dockerfile: Dockerfile
     container_name: aronno-landing
     restart: unless-stopped
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.aronno.rule=Host(`aronno.net`) || Host(`www.aronno.net`)"
+      - "traefik.http.routers.aronno.entrypoints=websecure"
+      - "traefik.http.routers.aronno.tls=true"
+      - "traefik.http.routers.aronno.tls.certresolver=myresolver"
+      - "traefik.http.services.aronno.loadbalancer.server.port=3000"
+      - "traefik.docker.network=traefik_webgateway"
+      # Redirect www to bare domain
+      - "traefik.http.routers.aronno-www.rule=Host(`www.aronno.net`)"
+      - "traefik.http.routers.aronno-www.entrypoints=websecure"
+      - "traefik.http.routers.aronno-www.tls=true"
+      - "traefik.http.routers.aronno-www.tls.certresolver=myresolver"
+      - "traefik.http.routers.aronno-www.middlewares=aronno-www-redirect"
+      - "traefik.http.middlewares.aronno-www-redirect.redirectregex.regex=^https://www\\.aronno\\.net/(.*)"
+      - "traefik.http.middlewares.aronno-www-redirect.redirectregex.replacement=https://aronno.net/$${1}"
+      - "traefik.http.middlewares.aronno-www-redirect.redirectregex.permanent=true"
+    networks:
+      - traefik_webgateway
+
+networks:
+  traefik_webgateway:
+    external: true
