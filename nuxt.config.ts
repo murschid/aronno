@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     fallback: 'dark',
     preference: 'system',
   },
+  devServer: {
+    port: 3006
+  },
   i18n: {
     locales: [
       { code: 'bn', name: 'বাংলা', file: 'bn.json' },
